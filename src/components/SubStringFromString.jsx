@@ -41,7 +41,7 @@ function StringChecker() {
 
   return (
     <div>
-      <Typography variant="h5">Can We create Substring From String</Typography>
+      <Typography variant="h6">Can We create Substring From String</Typography>
       <TextField
         label="Enter a string 1"
         value={inputString}
@@ -67,7 +67,7 @@ function StringChecker() {
         String Checker
       </Button>
       <Paper style={{ padding: "20px", margin: "20px" }}>
-        <Typography variant="h5">Analysis Result</Typography>
+        <Typography variant="h6">Analysis Result:</Typography>
         <Typography variant="body1">
           {stringResult
             ? "You can create a string"

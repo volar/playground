@@ -52,7 +52,7 @@ function StringAnalyzer() {
 
   return (
     <div>
-      <Typography variant="h5">Analyze String for Consecutive Chars</Typography>
+      <Typography variant="h6">Analyze String for Consecutive Chars</Typography>
       <TextField
         label="Enter a string"
         value={inputString}
@@ -78,7 +78,7 @@ function StringAnalyzer() {
         Analyze Recursively
       </Button>
       <Paper style={{ padding: "20px", margin: "20px" }}>
-        <Typography variant="h5">Analysis Result</Typography>
+        <Typography variant="h6">Analysis Result:</Typography>
         <Typography variant="body1">
           {char} : {count}
         </Typography>
