@@ -30,7 +30,8 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "@fontsource/nunito-sans": "^4.5.10",
-    "@fontsource/source-serif-pro": "^5.0.5"
+    "@fontsource/source-serif-pro": "^5.0.5",
+    "prettier": "^2.8.3"
   },
   "peerDependencies": {
     "react": "^18.2.0",
