@@ -1,14 +1,8 @@
 import React from "react";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import Navigation from "../components/Navigation";
 
 const Header = () => {
-  return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6">Volar React Playground</Typography>
-      </Toolbar>
-    </AppBar>
-  );
+  return <Navigation />;
 };
 
 export default Header;

@@ -9,6 +9,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
+import Navigation from "../components/Navigation";
 
 export default function ScientistList() {
   const [filter, setFilter] = useState("all"); // Initial filter state
@@ -26,6 +27,7 @@ export default function ScientistList() {
 
   return (
     <div>
+      <Navigation />
       <Tabs
         value={filter}
         onChange={handleFilterChange}

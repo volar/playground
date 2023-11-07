@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navigation from "../components/Navigation";
 
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState("");
@@ -6,6 +7,7 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
+      <Navigation />
       <SearchBar
         filterText={filterText}
         inStockOnly={inStockOnly}

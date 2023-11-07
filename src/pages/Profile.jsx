@@ -1,9 +1,11 @@
 import React from "react";
-import { Container, Typography, Link, Grid, Paper } from "@mui/material";
+import { Container, Typography, Link, Paper } from "@mui/material";
+import Navigation from "../components/Navigation";
 
 const Profile = () => {
   return (
     <Container maxWidth="md">
+      <Navigation />
       <Paper elevation={3} style={{ padding: "20px" }}>
         <Typography variant="h4" gutterBottom>
           Valentin Olar

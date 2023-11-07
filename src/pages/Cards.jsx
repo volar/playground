@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Typography, Grid, Paper } from "@mui/material";
 import axios from "axios";
+import Navigation from "../components/Navigation";
 
 function Cards() {
   const [data, setData] = useState([]);
@@ -19,6 +20,7 @@ function Cards() {
 
   return (
     <Container>
+      <Navigation />
       <Typography variant="h4" align="center" style={{ margin: "20px 0" }}>
         Sample Dashboard
       </Typography>
