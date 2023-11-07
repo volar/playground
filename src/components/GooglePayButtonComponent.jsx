@@ -1,6 +1,6 @@
 // GooglePayButton.js
-import React, { useState } from "react";
-import { GooglePayButton } from "@google-pay/button-react";
+import React, { useState } from 'react';
+import { GooglePayButton } from '@google-pay/button-react';
 
 const GooglePayButtonComponent = () => {
   const paymentRequest = {
@@ -8,35 +8,35 @@ const GooglePayButtonComponent = () => {
     apiVersionMinor: 0,
     allowedPaymentMethods: [
       {
-        type: "CARD",
+        type: 'CARD',
         parameters: {
-          allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-          allowedCardNetworks: ["MASTERCARD", "VISA"],
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ['MASTERCARD', 'VISA'],
         },
         tokenizationSpecification: {
-          type: "PAYMENT_GATEWAY",
+          type: 'PAYMENT_GATEWAY',
           parameters: {
-            gateway: "example",
+            gateway: 'example',
           },
         },
       },
     ],
     merchantInfo: {
-      merchantId: "12345678901234567890",
-      merchantName: "Demo Merchant",
+      merchantId: '12345678901234567890',
+      merchantName: 'Demo Merchant',
     },
     transactionInfo: {
-      totalPriceStatus: "FINAL",
-      totalPriceLabel: "Total",
-      totalPrice: "100.00",
-      currencyCode: "USD",
-      countryCode: "US",
+      totalPriceStatus: 'FINAL',
+      totalPriceLabel: 'Total',
+      totalPrice: '100.00',
+      currencyCode: 'USD',
+      countryCode: 'US',
     },
   };
 
-  const [buttonColor, setButtonColor] = useState("default");
-  const [buttonType, setButtonType] = useState("buy");
-  const [buttonSizeMode, setButtonSizeMode] = useState("static");
+  const [buttonColor, setButtonColor] = useState('default');
+  const [buttonType, setButtonType] = useState('buy');
+  const [buttonSizeMode, setButtonSizeMode] = useState('static');
   const [buttonWidth, setButtonWidth] = useState(240);
   const [buttonHeight, setButtonHeight] = useState(40);
 
@@ -47,10 +47,7 @@ const GooglePayButtonComponent = () => {
       <form className="top-bottom">
         <label className="control">
           <span>Button color</span>
-          <select
-            value={buttonColor}
-            onChange={(event) => setButtonColor(event.target.value)}
-          >
+          <select value={buttonColor} onChange={(event) => setButtonColor(event.target.value)}>
             <option value="default">default</option>
             <option value="black">black</option>
             <option value="white">white</option>
@@ -58,10 +55,7 @@ const GooglePayButtonComponent = () => {
         </label>
         <label className="control">
           <span>Button type</span>
-          <select
-            value={buttonType}
-            onChange={(event) => setButtonType(event.target.value)}
-          >
+          <select value={buttonType} onChange={(event) => setButtonType(event.target.value)}>
             <option value="buy">buy</option>
             <option value="plain">plain</option>
             <option value="donate">donate</option>
@@ -70,10 +64,8 @@ const GooglePayButtonComponent = () => {
         <label>
           <input
             type="checkbox"
-            checked={buttonSizeMode === "fill"}
-            onChange={(event) =>
-              setButtonSizeMode(event.target.checked ? "fill" : "static")
-            }
+            checked={buttonSizeMode === 'fill'}
+            onChange={(event) => setButtonSizeMode(event.target.checked ? 'fill' : 'static')}
           />
           <span>Custom button size</span>
         </label>
@@ -87,7 +79,7 @@ const GooglePayButtonComponent = () => {
             max="800"
             value={buttonWidth}
             onChange={(event) => setButtonWidth(Number(event.target.value))}
-            disabled={buttonSizeMode !== "fill"}
+            disabled={buttonSizeMode !== 'fill'}
           />
         </label>
         <label className="control">
@@ -100,7 +92,7 @@ const GooglePayButtonComponent = () => {
             max="100"
             value={buttonHeight}
             onChange={(event) => setButtonHeight(Number(event.target.value))}
-            disabled={buttonSizeMode !== "fill"}
+            disabled={buttonSizeMode !== 'fill'}
           />
         </label>
       </form>
@@ -113,17 +105,14 @@ const GooglePayButtonComponent = () => {
           buttonSizeMode={buttonSizeMode}
           paymentRequest={paymentRequest}
           onLoadPaymentData={(paymentRequest) => {
-            console.log("load payment data", paymentRequest);
+            console.log('load payment data', paymentRequest);
           }}
           style={{ width: buttonWidth, height: buttonHeight }}
         />
       </div>
 
-      <div className="note" style={{ display: isTop ? "none" : "" }}>
-        <p>
-          Note: This page may need to open in a new window for it to function
-          correctly.
-        </p>
+      <div className="note" style={{ display: isTop ? 'none' : '' }}>
+        <p>Note: This page may need to open in a new window for it to function correctly.</p>
         <p>
           <a href="/" target="_blank">
             Open in new window

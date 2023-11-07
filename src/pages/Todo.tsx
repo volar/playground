@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   TextField,
   Button,
@@ -8,8 +8,8 @@ import {
   ListItemSecondaryAction,
   IconButton,
   Paper,
-} from "@mui/material";
-import { Delete } from "@mui/icons-material";
+} from '@mui/material';
+import { Delete } from '@mui/icons-material';
 
 interface Task {
   id: number;
@@ -18,12 +18,12 @@ interface Task {
 
 function Todo() {
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [newTask, setNewTask] = useState<string>("");
+  const [newTask, setNewTask] = useState<string>('');
 
   const handleAddTask = () => {
-    if (newTask.trim() !== "") {
+    if (newTask.trim() !== '') {
       setTasks([...tasks, { id: Date.now(), text: newTask }]);
-      setNewTask("");
+      setNewTask('');
     }
   };
 
@@ -51,11 +51,7 @@ function Todo() {
           <ListItem key={task.id}>
             <ListItemText primary={task.text} />
             <ListItemSecondaryAction>
-              <IconButton
-                edge="end"
-                aria-label="delete"
-                onClick={() => handleDeleteTask(task.id)}
-              >
+              <IconButton edge="end" aria-label="delete" onClick={() => handleDeleteTask(task.id)}>
                 <Delete />
               </IconButton>
             </ListItemSecondaryAction>

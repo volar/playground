@@ -1,20 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { TextField, FormControl, Select, MenuItem } from "@mui/material";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { TextField, FormControl, Select, MenuItem } from '@mui/material';
 
 function CurrencyInput(props) {
   return (
     <div>
-      <TextField
-        type="text"
-        value={props.amount}
-        onChange={(ev) => props.onAmountChange(ev.target.value)}
-      />
+      <TextField type="text" value={props.amount} onChange={(ev) => props.onAmountChange(ev.target.value)} />
       <FormControl>
-        <Select
-          value={props.currency}
-          onChange={(ev) => props.onCurrencyChange(ev.target.value)}
-        >
+        <Select value={props.currency} onChange={(ev) => props.onCurrencyChange(ev.target.value)}>
           {props.currencies.map((currency) => (
             <MenuItem key={currency} value={currency}>
               {currency}

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { TextField, Button, Paper, Typography } from "@mui/material";
+import React, { useState } from 'react';
+import { TextField, Button, Paper, Typography } from '@mui/material';
 
 // single for loop alay
 function StringChecker() {
-  const [inputString, setInputString] = useState("");
-  const [subString, setSubString] = useState("");
+  const [inputString, setInputString] = useState('');
+  const [subString, setSubString] = useState('');
   const [stringResult, setStringResult] = useState(true);
 
   //single for loop to check for consecutive characters
@@ -58,20 +58,13 @@ function StringChecker() {
         variant="outlined"
         margin="normal"
       />
-      <Button
-        sx={{ margin: "0 10px" }}
-        variant="contained"
-        color="primary"
-        onClick={() => analyzeString(false)}
-      >
+      <Button sx={{ margin: '0 10px' }} variant="contained" color="primary" onClick={() => analyzeString(false)}>
         String Checker
       </Button>
-      <Paper style={{ padding: "20px", margin: "20px" }}>
+      <Paper style={{ padding: '20px', margin: '20px' }}>
         <Typography variant="h6">Analysis Result:</Typography>
         <Typography variant="body1">
-          {stringResult
-            ? "You can create a string"
-            : "No, you cannot create a string"}
+          {stringResult ? 'You can create a string' : 'No, you cannot create a string'}
         </Typography>
       </Paper>
     </div>

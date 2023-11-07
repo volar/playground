@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { TextField, Button, Paper, Typography } from "@mui/material";
+import React, { useState } from 'react';
+import { TextField, Button, Paper, Typography } from '@mui/material';
 
 // single for loop alay
 function StringAnalyzer() {
-  const [inputString, setInputString] = useState("");
-  const [analysisResult, setAnalysisResult] = useState("");
+  const [inputString, setInputString] = useState('');
+  const [analysisResult, setAnalysisResult] = useState('');
 
   //single for loop to check for consecutive characters
   const analyzeStringForConsecutiveChars = () => {
     // check for the input of the string
     if (!inputString) {
-      return null;
+      return undefined;
     }
 
     // max characters in the string
@@ -41,9 +41,9 @@ function StringAnalyzer() {
     }
 
     // return the max of the characters and the characters
-    console.log("input string", inputString);
-    console.log("maxChar in the string", maxChar);
-    console.log("maxCount", maxCount);
+    console.log('input string', inputString);
+    console.log('maxChar in the string', maxChar);
+    console.log('maxCount', maxCount);
     setAnalysisResult({ char: maxChar, count: maxCount });
     return { char: maxChar, count: maxCount };
   };
@@ -62,7 +62,7 @@ function StringAnalyzer() {
         margin="normal"
       />
       <Button
-        sx={{ margin: "0 10px" }}
+        sx={{ margin: '0 10px' }}
         variant="contained"
         color="primary"
         onClick={() => analyzeStringForConsecutiveChars(false)}
@@ -70,14 +70,14 @@ function StringAnalyzer() {
         Analyze Iteratively
       </Button>
       <Button
-        sx={{ margin: "10px 10px" }}
+        sx={{ margin: '10px 10px' }}
         variant="contained"
         color="primary"
         onClick={() => analyzeStringForConsecutiveChars(true)}
       >
         Analyze Recursively
       </Button>
-      <Paper style={{ padding: "20px", margin: "20px" }}>
+      <Paper style={{ padding: '20px', margin: '20px' }}>
         <Typography variant="h6">Analysis Result:</Typography>
         <Typography variant="body1">
           {char} : {count}

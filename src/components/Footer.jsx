@@ -1,16 +1,10 @@
-import React from "react";
-import { Paper, Typography } from "@mui/material";
+import React from 'react';
+import { Paper, Typography } from '@mui/material';
 
 const Footer = () => {
   return (
-    <Paper
-      square
-      elevation={3}
-      style={{ padding: "13px", textAlign: "center" }}
-    >
-      <Typography variant="body2">
-        © {new Date().getFullYear()} True Grit
-      </Typography>
+    <Paper square elevation={3} style={{ padding: '13px', textAlign: 'center' }}>
+      <Typography variant="body2">© {new Date().getFullYear()} True Grit</Typography>
     </Paper>
   );
 };

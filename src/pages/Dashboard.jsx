@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Container,
   Typography,
@@ -12,13 +12,13 @@ import {
   ListItem,
   ListItemText,
   Divider,
-} from "@mui/material";
-import menuData from "../data/data"; // Import the menu data from data.js
-import Navigation from "../components/Navigation";
+} from '@mui/material';
+import menuData from '../data/data'; // Import the menu data from data.js
+import Navigation from '../components/Navigation';
 
 function Dashboard() {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(undefined);
 
   const handleDrawerOpen = (item) => {
     setSelectedItem(item);
@@ -74,18 +74,14 @@ function Dashboard() {
   return (
     <Container>
       <Navigation />
-      <Typography variant="h4" align="center" style={{ margin: "20px 0" }}>
+      <Typography variant="h4" align="center" style={{ margin: '20px 0' }}>
         Dashboard
       </Typography>
       <Grid container spacing={3}>
         {menuData.map((item) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
             <Card>
-              <img
-                src={item.img}
-                alt={item.title}
-                style={{ width: "100%", height: "200px", objectFit: "cover" }}
-              />
+              <img src={item.img} alt={item.title} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
               <CardContent>
                 <Typography variant="h6" gutterBottom>
                   {item.title}
@@ -96,11 +92,7 @@ function Dashboard() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={() => handleDrawerOpen(item)}
-                >
+                <Button variant="contained" color="primary" onClick={() => handleDrawerOpen(item)}>
                   Order
                 </Button>
               </CardActions>
@@ -115,24 +107,14 @@ function Dashboard() {
           </ListItem>
           <Divider />
           <ListItem>
-            <ListItemText
-              primary={`Item: ${selectedItem ? selectedItem.title : ""}`}
-            />
+            <ListItemText primary={`Item: ${selectedItem ? selectedItem.title : ''}`} />
           </ListItem>
           <ListItem>
-            <ListItemText
-              primary={`Total Price: $${
-                selectedItem ? selectedItem.price : ""
-              }`}
-            />
+            <ListItemText primary={`Total Price: $${selectedItem ? selectedItem.price : ''}`} />
           </ListItem>
           <Divider />
           <ListItem>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleOrderClick}
-            >
+            <Button variant="contained" color="primary" onClick={handleOrderClick}>
               Place Order
             </Button>
           </ListItem>

@@ -1,8 +1,8 @@
-import { useState } from "react";
-import Navigation from "../components/Navigation";
+import { useState } from 'react';
+import Navigation from '../components/Navigation';
 
 function FilterableProductTable({ products }) {
-  const [filterText, setFilterText] = useState("");
+  const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
 
   return (
@@ -14,11 +14,7 @@ function FilterableProductTable({ products }) {
         onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly}
       />
-      <ProductTable
-        products={products}
-        filterText={filterText}
-        inStockOnly={inStockOnly}
-      />
+      <ProductTable products={products} filterText={filterText} inStockOnly={inStockOnly} />
     </div>
   );
 }
@@ -32,11 +28,7 @@ function ProductCategoryRow({ category }) {
 }
 
 function ProductRow({ product }) {
-  const name = product.stocked ? (
-    product.name
-  ) : (
-    <span style={{ color: "red" }}>{product.name}</span>
-  );
+  const name = product.stocked ? product.name : <span style={{ color: 'red' }}>{product.name}</span>;
 
   return (
     <tr>
@@ -48,7 +40,7 @@ function ProductRow({ product }) {
 
 function ProductTable({ products, filterText, inStockOnly }) {
   const rows = [];
-  let lastCategory = null;
+  let lastCategory = undefined;
 
   products.forEach((product) => {
     if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
@@ -58,12 +50,7 @@ function ProductTable({ products, filterText, inStockOnly }) {
       return;
     }
     if (product.category !== lastCategory) {
-      rows.push(
-        <ProductCategoryRow
-          category={product.category}
-          key={product.category}
-        />
-      );
+      rows.push(<ProductCategoryRow category={product.category} key={product.category} />);
     }
     rows.push(<ProductRow product={product} key={product.name} />);
     lastCategory = product.category;
@@ -82,12 +69,7 @@ function ProductTable({ products, filterText, inStockOnly }) {
   );
 }
 
-function SearchBar({
-  filterText,
-  inStockOnly,
-  onFilterTextChange,
-  onInStockOnlyChange,
-}) {
+function SearchBar({ filterText, inStockOnly, onFilterTextChange, onInStockOnlyChange }) {
   return (
     <form>
       <input
@@ -97,24 +79,20 @@ function SearchBar({
         onChange={(e) => onFilterTextChange(e.target.value)}
       />
       <label>
-        <input
-          type="checkbox"
-          checked={inStockOnly}
-          onChange={(e) => onInStockOnlyChange(e.target.checked)}
-        />{" "}
-        Only show products in stock
+        <input type="checkbox" checked={inStockOnly} onChange={(e) => onInStockOnlyChange(e.target.checked)} /> Only
+        show products in stock
       </label>
     </form>
   );
 }
 
 const PRODUCTS = [
-  { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
-  { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
-  { category: "Fruits", price: "$2", stocked: false, name: "Passionfruit" },
-  { category: "Vegetables", price: "$2", stocked: true, name: "Spinach" },
-  { category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin" },
-  { category: "Vegetables", price: "$1", stocked: true, name: "Peas" },
+  { category: 'Fruits', price: '$1', stocked: true, name: 'Apple' },
+  { category: 'Fruits', price: '$1', stocked: true, name: 'Dragonfruit' },
+  { category: 'Fruits', price: '$2', stocked: false, name: 'Passionfruit' },
+  { category: 'Vegetables', price: '$2', stocked: true, name: 'Spinach' },
+  { category: 'Vegetables', price: '$4', stocked: false, name: 'Pumpkin' },
+  { category: 'Vegetables', price: '$1', stocked: true, name: 'Peas' },
 ];
 
 export default function ProductTableExample() {

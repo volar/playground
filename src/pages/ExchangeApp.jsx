@@ -1,8 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import CurrencyInput from '../components/CurrencyInput';
-import { Grid, Typography, styled, theme } from '@mui/material';
-import axios from 'axios';
+import { Grid, Typography, styled } from '@mui/material';
 import Header from '../components/Header';
 
 const PageBody = styled('div')(({ theme }) => ({
@@ -12,11 +11,11 @@ const PageBody = styled('div')(({ theme }) => ({
 }));
 
 const ExchangeApp = () => {
-  const [currencyFrom, setCurrencyFrom] = useState(['USD']);
-  const [currencyToo, setCurrencyToo] = useState(['CAD']);
-  const [amountFrom, setAmountFrom] = useState(1);
-  const [amountToo, setamountToo] = useState(1);
-  const [rates, setRates] = useState([]);
+  const [currencyFrom] = useState(['USD']);
+  const [currencyToo] = useState(['CAD']);
+  const [amountFrom] = useState(1);
+  const [amountToo] = useState(1);
+  const [rates] = useState([]);
 
   // need to get axios currencies from api
 

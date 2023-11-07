@@ -1,4 +1,4 @@
-import { recipes } from "../data/recipesData.js";
+import { recipes } from '../data/recipesData.js';
 
 function Recipe({ id, name, ingredients }) {
   return (
@@ -26,11 +26,7 @@ export default function RecipesList() {
 }
 
 const poem = {
-  lines: [
-    "I write, erase, rewrite",
-    "Erase again, and then",
-    "A poppy blooms.",
-  ],
+  lines: ['I write, erase, rewrite', 'Erase again, and then', 'A poppy blooms.'],
 };
 
 function Poem() {
@@ -38,8 +34,8 @@ function Poem() {
 
   // Fill the output array
   poem.lines.forEach((line, i) => {
-    output.push(<hr key={i + "-separator"} />);
-    output.push(<p key={i + "-text"}>{line}</p>);
+    output.push(<hr key={i + '-separator'} />);
+    output.push(<p key={i + '-text'}>{line}</p>);
   });
   // Remove the first <hr />
   output.shift();

@@ -1,13 +1,7 @@
 // Layout.jsx
-import React from "react";
-import {
-  AppBar,
-  Container,
-  CssBaseline,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import Footer from "./Footer";
+import React from 'react';
+import { AppBar, Container, CssBaseline, Toolbar, Typography } from '@mui/material';
+import Footer from './Footer';
 
 const Layout = ({ children, history }) => {
   return (
@@ -18,7 +12,7 @@ const Layout = ({ children, history }) => {
           <Typography variant="h6">My Personal Website</Typography>
         </Toolbar>
       </AppBar>
-      <Container maxWidth="lg" style={{ paddingTop: "20px" }}>
+      <Container maxWidth="lg" style={{ paddingTop: '20px' }}>
         {children}
       </Container>
       <Footer />

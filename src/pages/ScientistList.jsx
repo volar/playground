@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { people } from "../data/scientistData.js";
-import { getImageUrl } from "../utils/utils.js";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography";
-import Navigation from "../components/Navigation";
+import React, { useState } from 'react';
+import { people } from '../data/scientistData.js';
+import { getImageUrl } from '../utils/utils.js';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
+import Navigation from '../components/Navigation';
 
 export default function ScientistList() {
-  const [filter, setFilter] = useState("all"); // Initial filter state
+  const [filter, setFilter] = useState('all'); // Initial filter state
 
   // Function to handle filter change
   const handleFilterChange = (event, newValue) => {
@@ -20,21 +20,12 @@ export default function ScientistList() {
   };
 
   // Filter the scientists based on the selected filter
-  const filteredScientists =
-    filter === "all"
-      ? people
-      : people.filter((person) => person.profession === filter);
+  const filteredScientists = filter === 'all' ? people : people.filter((person) => person.profession === filter);
 
   return (
     <div>
       <Navigation />
-      <Tabs
-        value={filter}
-        onChange={handleFilterChange}
-        indicatorColor="primary"
-        textColor="primary"
-        centered
-      >
+      <Tabs value={filter} onChange={handleFilterChange} indicatorColor="primary" textColor="primary" centered>
         <Tab label="All" value="all" />
         <Tab label="Chemists" value="chemist" />
         <Tab label="Mathematician" value="mathematician" />
