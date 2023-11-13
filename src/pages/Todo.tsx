@@ -52,13 +52,22 @@ function Todo() {
 
   const handleDeleteTask = (taskId: number) => {
     const updatedTasks = tasks.filter((task) => task.id !== taskId);
+    localStorage.setItem('todos', JSON.stringify(updatedTasks));
     setTasks(updatedTasks);
   };
 
   const handleToggleCompleted = (taskId: number) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) => (task.id === taskId ? { ...task, completed: !task.completed } : task))
-    );
+    let updatedTasks = tasks;
+    updatedTasks = updatedTasks.map((task) => (task.id === taskId ? { ...task, completed: !task.completed } : task));
+    localStorage.setItem('todos', JSON.stringify(updatedTasks));
+    setTasks(updatedTasks);
+  };
+
+  const updateTask = (taskId: number, newText: string) => {
+    let updatedTasks = tasks;
+    updatedTasks = updatedTasks.map((task) => (task.id === taskId ? { ...task, text: newText } : task));
+    localStorage.setItem('todos', JSON.stringify(updatedTasks));
+    setTasks(updatedTasks);
   };
 
   const completedTasks = tasks.filter((task) => task.completed);
@@ -102,7 +111,11 @@ function Todo() {
             }}
           >
             <Checkbox checked={task.completed} onChange={() => handleToggleCompleted(task.id)} />
-            <ListItemText primary={task.text} />
+            <ListItemText
+              style={{ textDecoration: task.completed ? 'line-through' : 'none' }}
+              primary={task.text}
+              onClick={() => updateTask(task.id, task.text)}
+            />
             <ListItemSecondaryAction>
               <IconButton edge="end" aria-label="delete" onClick={() => handleDeleteTask(task.id)}>
                 <Delete />
