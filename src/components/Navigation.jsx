@@ -17,6 +17,9 @@ const Navigation = () => {
           <Button color="inherit" href="/profile">
             Profile
           </Button>
+          <Button color="inherit" href="/todo">
+            Todo
+          </Button>
           <Button color="inherit" href="/cards">
             Cards
           </Button>
