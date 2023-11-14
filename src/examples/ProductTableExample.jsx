@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import Navigation from '../components/Navigation';
+import { Typography } from '@mui/material';
 
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
 
   return (
-    <div>
-      <Navigation />
+    <>
+      <Typography variant="h5" align="center" style={{ margin: '20px 0' }}>
+        Product Table
+      </Typography>
       <SearchBar
         filterText={filterText}
         inStockOnly={inStockOnly}
@@ -15,7 +17,7 @@ function FilterableProductTable({ products }) {
         onInStockOnlyChange={setInStockOnly}
       />
       <ProductTable products={products} filterText={filterText} inStockOnly={inStockOnly} />
-    </div>
+    </>
   );
 }
 

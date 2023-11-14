@@ -22,7 +22,7 @@ function Cards() {
     <Container>
       <Navigation />
       <Typography variant="h4" align="center" style={{ margin: '20px 0' }}>
-        Sample Dashboard
+        Sample Cards Layout
       </Typography>
       <Grid container spacing={3}>
         {data.map((item) => (

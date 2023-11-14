@@ -6,7 +6,7 @@ import Cards from './pages/Cards';
 import ReduxExample from './pages/ReduxExample';
 import RecipesList from './pages/RecipesList';
 import ScientistList from './pages/ScientistList';
-import ProductTableExample from './pages/ProductTableExample';
+import Examples from './pages/Examples';
 import ConsecutiveChar from './pages/ConsecutiveChar';
 import ExchangeApp from './pages/ExchangeApp';
 import Profile from './pages/Profile';
@@ -23,7 +23,7 @@ function App() {
         <Route path="redux-example" element={<ReduxExample />} />
         <Route path="recipes-list" element={<RecipesList />} />
         <Route path="scientist-list" element={<ScientistList />} />
-        <Route path="product-table" element={<ProductTableExample />} />
+        <Route path="examples" element={<Examples />} />
         <Route path="consecutive-char" element={<ConsecutiveChar />} />
         <Route path="exchange" element={<ExchangeApp />} />
         <Route path="todo" element={<Todo />} />
