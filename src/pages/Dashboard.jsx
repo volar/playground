@@ -15,6 +15,7 @@ import {
 } from '@mui/material';
 import menuData from '../data/data'; // Import the menu data from data.js
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 function Dashboard() {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -120,6 +121,7 @@ function Dashboard() {
           </ListItem>
         </List>
       </Drawer>
+      <Footer />
     </Container>
   );
 }

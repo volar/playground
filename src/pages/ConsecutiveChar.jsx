@@ -8,26 +8,24 @@ import ReverseWord from '../components/ReverseWords';
 
 const Home = () => {
   return (
-    <>
+    <Container>
       <Header />
-      <Container>
-        <Typography variant="h5" align="center" style={{ margin: '20px 0' }}>
-          Various String Analyzers for fun and giggles
+      <Typography variant="h5" align="center" style={{ margin: '20px 0' }}>
+        Various String Analyzers for fun and giggles
+      </Typography>
+      <Stack spacing={2}>
+        <Typography variant="body1" paragraph>
+          <StringAnalyzer />
         </Typography>
-        <Stack spacing={2}>
-          <Typography variant="body1" paragraph>
-            <StringAnalyzer />
-          </Typography>
-          <Typography variant="body1" paragraph>
-            <SubStringFromString />
-          </Typography>
-          <Typography variant="body1" paragraph>
-            <ReverseWord />
-          </Typography>
-        </Stack>
-      </Container>
+        <Typography variant="body1" paragraph>
+          <SubStringFromString />
+        </Typography>
+        <Typography variant="body1" paragraph>
+          <ReverseWord />
+        </Typography>
+      </Stack>
       <Footer />
-    </>
+    </Container>
   );
 };
 

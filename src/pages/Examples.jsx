@@ -5,6 +5,7 @@ import ProductTableExample from '../examples/ProductTableExample';
 import Counter from '../examples/Counter';
 import Accordion from '../examples/Acordition';
 import TrafficLight from '../examples/TrafficLight';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -31,6 +32,7 @@ const Home = () => {
           </Paper>
         </Grid>
       </Grid>
+      <Footer />
     </Container>
   );
 };

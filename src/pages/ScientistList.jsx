@@ -10,6 +10,8 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+import Container from '@mui/material/Container';
 
 export default function ScientistList() {
   const [filter, setFilter] = useState('all'); // Initial filter state
@@ -23,7 +25,7 @@ export default function ScientistList() {
   const filteredScientists = filter === 'all' ? people : people.filter((person) => person.profession === filter);
 
   return (
-    <div>
+    <Container>
       <Navigation />
       <Tabs value={filter} onChange={handleFilterChange} indicatorColor="primary" textColor="primary" centered>
         <Tab label="All" value="all" />
@@ -50,6 +52,7 @@ export default function ScientistList() {
           </ListItem>
         ))}
       </List>
-    </div>
+      <Footer />
+    </Container>
   );
 }

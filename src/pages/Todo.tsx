@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import { Delete } from '@mui/icons-material';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 interface Task {
   id: number;
@@ -150,6 +151,7 @@ function Todo() {
           </ListItem>
         ))}
       </List>
+      <Footer />
     </Container>
   );
 }
