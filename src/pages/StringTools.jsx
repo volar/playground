@@ -4,9 +4,10 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StringAnalyzer from '../components/StringAnalyzer';
 import SubStringFromString from '../components/SubStringFromString';
-import ReverseWord from '../components/ReverseWords';
+import ReverseWordsInSentence from '../components/ReverseWords';
+import ReverseCharsInString from '../components/ReverseCharsInString';
 
-const Home = () => {
+const StringTools = () => {
   return (
     <Container>
       <Header />
@@ -14,19 +15,14 @@ const Home = () => {
         Various String Analyzers for fun and giggles
       </Typography>
       <Stack spacing={2}>
-        <Typography variant="body1" paragraph>
-          <StringAnalyzer />
-        </Typography>
-        <Typography variant="body1" paragraph>
-          <SubStringFromString />
-        </Typography>
-        <Typography variant="body1" paragraph>
-          <ReverseWord />
-        </Typography>
+        <StringAnalyzer />
+        <SubStringFromString />
+        <ReverseWordsInSentence />
+        <ReverseCharsInString />
       </Stack>
       <Footer />
     </Container>
   );
 };
 
-export default Home;
+export default StringTools;

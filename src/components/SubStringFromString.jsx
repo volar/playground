@@ -62,7 +62,7 @@ function StringChecker() {
         String Checker
       </Button>
       <Paper style={{ padding: '20px', margin: '20px' }}>
-        <Typography variant="h6">Analysis Result:</Typography>
+        <Typography variant="p">Analysis Result:</Typography>
         <Typography variant="body1">
           {stringResult ? 'You can create a string' : 'No, you cannot create a string'}
         </Typography>

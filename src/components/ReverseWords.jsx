@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextField, Button, Paper, Typography } from '@mui/material';
 
 // single for loop alay
-function StringAnalyzer() {
+function ReverseWordsInSentence() {
   const [inputString, setInputString] = useState('');
   const [reversedSentence, setReversedSentence] = useState('');
 
@@ -29,11 +29,11 @@ function StringAnalyzer() {
         Reverse Words
       </Button>
       <Paper style={{ padding: '20px', margin: '20px' }}>
-        <Typography variant="h6">Reversed sentence:</Typography>
+        <Typography variant="p">Reversed sentence:</Typography>
         <Typography variant="body1">{reversedSentence}</Typography>
       </Paper>
     </div>
   );
 }
 
-export default StringAnalyzer;
+export default ReverseWordsInSentence;

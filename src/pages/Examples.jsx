@@ -8,6 +8,7 @@ import TrafficLight from '../examples/TrafficLight';
 import Footer from '../components/Footer';
 import SimpleTodo from '../examples/SimpleTodo';
 import ToursApp from '../examples/ToursApp';
+import QuestionsApp from '../examples/Questions';
 
 const Home = () => {
   return (
@@ -23,6 +24,9 @@ const Home = () => {
           </Paper>
           <Paper elevation={3} sx={{ padding: '10px', margin: '5px' }}>
             <TrafficLight />
+          </Paper>
+          <Paper elevation={3} sx={{ padding: '10px', margin: '5px' }}>
+            <QuestionsApp />
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={3}>
