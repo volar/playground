@@ -1,18 +1,31 @@
 import { useState } from 'react';
 
+function TodoList({ todos, handleDeleteTodo, handleToggleCompleted }) {
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>
+          <span>{todo.task}</span>
+          <button onClick={() => handleDeleteTodo}>Delete</button>
+          <button onClick={() => handleToggleCompleted}>Completed</button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function SimpleTodo() {
   const [todos, setTodos] = useState([]);
   const [newTask, setNewTask] = useState('');
 
   const handleAddTodo = () => {
     const id = Date.now();
-    const updateTask = {
+    const newTodo = {
       id: id,
       task: newTask,
       completed: false,
     };
-
-    setTodos([...todos, updateTask]);
+    setTodos([...todos, newTodo]);
     setNewTask('');
   };
 
@@ -47,26 +60,18 @@ export default function SimpleTodo() {
       <br />
       <br />
       <h4>Todo List</h4>
-      <ul>
-        {incompleteTodos.map((todo) => (
-          <li key={todo.id}>
-            <input type="checkbox" checked={todo.completed} onChange={() => handleToggleCompleted(todo.id)}></input>
-            {todo.task}
-            <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <TodoList
+        todos={incompleteTodos}
+        handleDeleteTodo={handleDeleteTodo}
+        handleToggleCompleted={handleToggleCompleted}
+      />
       <br />
       <h4>Completed Todos List</h4>
-      <ul>
-        {completedTodos.map((todo) => (
-          <li key={todo.id}>
-            <input type="checkbox" checked={todo.completed} onChange={() => handleToggleCompleted(todo.id)}></input>
-            {todo.task}
-            <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <TodoList
+        todos={completedTodos}
+        handleDeleteTodo={handleDeleteTodo}
+        handleToggleCompleted={handleToggleCompleted}
+      />
       <br />
     </>
   );
