@@ -13,12 +13,6 @@ import Navigation from '../components/Navigation.js';
 import Footer from '../components/Footer.jsx';
 import Container from '@mui/material/Container';
 
-interface Scientist {
-  name: string;
-  profession: string;
-  accomplishment: string;
-}
-
 export default function ScientistList() {
   const [filter, setFilter] = useState<string>('all'); // Initial filter state
 
