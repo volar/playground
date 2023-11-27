@@ -3,8 +3,14 @@ import { Container, Typography, Grid, Paper } from '@mui/material';
 import axios from 'axios';
 import Navigation from '../components/Navigation';
 
+interface CardData {
+  id: number;
+  title: string;
+  body: string;
+}
+
 function Cards() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<CardData[]>([]);
 
   useEffect(() => {
     // Replace this with your API endpoint

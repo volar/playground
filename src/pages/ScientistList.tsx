@@ -9,15 +9,21 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
+import Navigation from '../components/Navigation.js';
+import Footer from '../components/Footer.jsx';
 import Container from '@mui/material/Container';
 
+interface Scientist {
+  name: string;
+  profession: string;
+  accomplishment: string;
+}
+
 export default function ScientistList() {
-  const [filter, setFilter] = useState('all'); // Initial filter state
+  const [filter, setFilter] = useState<string>('all'); // Initial filter state
 
   // Function to handle filter change
-  const handleFilterChange = (event, newValue) => {
+  const handleFilterChange = (event: React.ChangeEvent<{}>, newValue: string) => {
     setFilter(newValue);
   };
 

@@ -2,10 +2,11 @@ import React from 'react';
 import { Typography, Container, Stack } from '@mui/material';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import StringAnalyzer from '../components/StringAnalyzer';
-import SubStringFromString from '../components/SubStringFromString';
-import ReverseWordsInSentence from '../components/ReverseWords';
-import ReverseCharsInString from '../components/ReverseCharsInString';
+import StringAnalyzer from '../components/strings/StringAnalyzer';
+import SubStringFromString from '../components/strings/SubStringFromString';
+import ReverseWordsInSentence from '../components/strings/ReverseWords';
+import ReverseCharsInString from '../components/strings/ReverseCharsInString';
+import CheckCharsUnique from '../components/strings/CheckCharsUnique';
 
 const StringTools = () => {
   return (
@@ -19,6 +20,7 @@ const StringTools = () => {
         <SubStringFromString />
         <ReverseWordsInSentence />
         <ReverseCharsInString />
+        <CheckCharsUnique />
       </Stack>
       <Footer />
     </Container>

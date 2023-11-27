@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { TextField, Button, Paper, Typography } from '@mui/material';
+import { Typography, TextField, Button, Paper } from '@mui/material';
 
-// single for loop alay
 function ReverseWordsInSentence() {
-  const [inputString, setInputString] = useState('');
-  const [reversedSentence, setReversedSentence] = useState('');
+  const [inputString, setInputString] = useState<string>('');
+  const [reversedSentence, setReversedSentence] = useState<string>('');
 
-  function reverseWords(s) {
-    const reversedWords = [];
+  function reverseWords() {
+    const reversedWords: string[] = [];
 
-    inputString.split(' ').map((word) => reversedWords.unshift(word));
+    inputString.split(' ').forEach((word) => reversedWords.unshift(word));
 
     setReversedSentence(reversedWords.join(' '));
   }
@@ -25,11 +24,11 @@ function ReverseWordsInSentence() {
         variant="outlined"
         margin="normal"
       />
-      <Button sx={{ margin: '0 10px' }} variant="contained" color="primary" onClick={() => reverseWords(false)}>
+      <Button sx={{ margin: '0 10px' }} variant="contained" color="primary" onClick={() => reverseWords()}>
         Reverse Words
       </Button>
       <Paper style={{ padding: '20px', margin: '20px' }}>
-        <Typography variant="p">Reversed sentence:</Typography>
+        <Typography variant="body1">Reversed sentence:</Typography>
         <Typography variant="body1">{reversedSentence}</Typography>
       </Paper>
     </div>

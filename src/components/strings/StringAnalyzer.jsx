@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Paper, Typography } from '@mui/material';
 
-// single for loop alay
 function StringAnalyzer() {
   const [inputString, setInputString] = useState('');
   const [analysisResult, setAnalysisResult] = useState('');

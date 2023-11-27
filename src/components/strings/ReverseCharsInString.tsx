@@ -25,16 +25,11 @@ function ReverseCharsInString() {
         variant="outlined"
         margin="normal"
       />
-      <Button
-        sx={{ margin: '0 10px' }}
-        variant="contained"
-        color="primary"
-        onClick={() => reverseAndCheckPalindrome(false)}
-      >
+      <Button sx={{ margin: '0 10px' }} variant="contained" color="primary" onClick={() => reverseAndCheckPalindrome()}>
         Reverse Characters
       </Button>
       <Paper style={{ padding: '20px', margin: '20px' }}>
-        <Typography variant="p">String with reversed characters:</Typography>
+        <Typography variant="body1">String with reversed characters:</Typography>
         <Typography variant="body1">{reverseCharsString}</Typography>
         <Typography variant="body1">{isPalindrome}</Typography>
       </Paper>
