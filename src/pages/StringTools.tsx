@@ -8,7 +8,7 @@ import ReverseWordsInSentence from '../components/strings/ReverseWords';
 import ReverseCharsInString from '../components/strings/ReverseCharsInString';
 import CheckCharsUnique from '../components/strings/CheckCharsUnique';
 
-const StringTools = () => {
+function StringTools() {
   return (
     <Container>
       <Header />
@@ -25,6 +25,6 @@ const StringTools = () => {
       <Footer />
     </Container>
   );
-};
+}
 
 export default StringTools;

@@ -1,3 +1,5 @@
+/* eslint-disable */
+import React from 'react';
 import { useImmer } from 'use-immer';
 
 export default function ObjectMutation() {
@@ -10,25 +12,25 @@ export default function ObjectMutation() {
     },
   });
 
-  function handleNameChange(e) {
+  function handleNameChange(e: any) {
     updatePerson((draft) => {
       draft.name = e.target.value;
     });
   }
 
-  function handleTitleChange(e) {
+  function handleTitleChange(e: any) {
     updatePerson((draft) => {
       draft.artwork.title = e.target.value;
     });
   }
 
-  function handleCityChange(e) {
+  function handleCityChange(e: any) {
     updatePerson((draft) => {
       draft.artwork.city = e.target.value;
     });
   }
 
-  function handleImageChange(e) {
+  function handleImageChange(e: any) {
     updatePerson((draft) => {
       draft.artwork.image = e.target.value;
     });

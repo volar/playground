@@ -1,48 +1,10 @@
-import { useState } from 'react';
+/* eslint-disable */
+import React, { useState } from 'react';
 import { Typography } from '@mui/material';
-
-function FilterableProductTable({ products }) {
-  const [filterText, setFilterText] = useState('');
-  const [inStockOnly, setInStockOnly] = useState(false);
-
-  return (
-    <>
-      <Typography variant="h5" align="center" style={{ margin: '20px 0' }}>
-        Product Table
-      </Typography>
-      <SearchBar
-        filterText={filterText}
-        inStockOnly={inStockOnly}
-        onFilterTextChange={setFilterText}
-        onInStockOnlyChange={setInStockOnly}
-      />
-      <ProductTable products={products} filterText={filterText} inStockOnly={inStockOnly} />
-    </>
-  );
-}
-
-function ProductCategoryRow({ category }) {
-  return (
-    <tr>
-      <th colSpan="2">{category}</th>
-    </tr>
-  );
-}
-
-function ProductRow({ product }) {
-  const name = product.stocked ? product.name : <span style={{ color: 'red' }}>{product.name}</span>;
-
-  return (
-    <tr>
-      <td>{name}</td>
-      <td>{product.price}</td>
-    </tr>
-  );
-}
 
 function ProductTable({ products, filterText, inStockOnly }) {
   const rows = [];
-  let lastCategory = undefined;
+  let lastCategory;
 
   products.forEach((product) => {
     if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
@@ -85,6 +47,45 @@ function SearchBar({ filterText, inStockOnly, onFilterTextChange, onInStockOnlyC
         show products in stock
       </label>
     </form>
+  );
+}
+
+function FilterableProductTable({ products }) {
+  const [filterText, setFilterText] = useState('');
+  const [inStockOnly, setInStockOnly] = useState(false);
+
+  return (
+    <>
+      <Typography variant="h5" align="center" style={{ margin: '20px 0' }}>
+        Product Table
+      </Typography>
+      <SearchBar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
+        onInStockOnlyChange={setInStockOnly}
+      />
+      <ProductTable products={products} filterText={filterText} inStockOnly={inStockOnly} />
+    </>
+  );
+}
+
+function ProductCategoryRow({ category }) {
+  return (
+    <tr>
+      <th colSpan="2">{category}</th>
+    </tr>
+  );
+}
+
+function ProductRow({ product }) {
+  const name = product.stocked ? product.name : <span style={{ color: 'red' }}>{product.name}</span>;
+
+  return (
+    <tr>
+      <td>{name}</td>
+      <td>{product.price}</td>
+    </tr>
   );
 }
 

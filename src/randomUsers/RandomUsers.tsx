@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Table } from './Table';
 import { Task } from './Task';
 import useRandomUsers from '../hooks/useRandomUsers';

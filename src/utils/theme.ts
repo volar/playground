@@ -40,7 +40,7 @@ const theme = createTheme({
   },
 } as ThemeOptions);
 
-export { theme };
+export default theme;
 
 declare module '@mui/material/styles' {
   interface Palette {

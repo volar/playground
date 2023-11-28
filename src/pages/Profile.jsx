@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography, Link, Paper } from '@mui/material';
 import Navigation from '../components/Navigation';
 
-const Profile = () => {
+function Profile() {
   return (
     <Container maxWidth="md">
       <Navigation />
@@ -34,11 +34,11 @@ const Profile = () => {
         <Typography variant="subtitle1" gutterBottom>
           Senior Software Engineer Bowery Valuation (Jan 2022 - Sept 2023)
         </Typography>
-        <Typography variant="subtitle1" gutterBottom></Typography>
+        <Typography variant="subtitle1" gutterBottom />
         Javascript / Typescript /React / Material UI / NodeJS / NestJS / MongoDB / AWS Lambda / Playwright / Jest /
         React Testing Library / Miro / Jira / Git / JSON / OpenXML / C# / Datadog / Redux / Mobx / CI/CD / Docker / AWS
         / Postman / Shape Up / Notion / LaunchDarkly
-        <Typography variant="subtitle1" gutterBottom></Typography>
+        <Typography variant="subtitle1" gutterBottom />
         <Typography variant="body1" paragraph>
           Designed and developed Automated Zoning feature using 2 week shape up cycle methodology, build robust third
           party service using Nest to consume and parse data from zoneomics api. Integrated backend code with frontend
@@ -55,16 +55,16 @@ const Profile = () => {
           Playwright testing framework. Used sonarCloud to monitor code quality. Decoupled features into microservices,
           improving modularity and code writing by writing all new code in Typescript and refactoring React Class
           Components into Functional Components. Conducted interviews and onboarding. Established collaborative
-          engineering culture through "Code & Coffee" and tech-focused gatherings.
+          engineering culture through &quot;Code & Coffee&quot; and tech-focused gatherings.
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
           Senior Software Engineer Refinitiv, an LSEG business (Aug 2010-Jan 2021) Scivantage (acquired by Refinitiv in
           April 2020)
         </Typography>
-        <Typography variant="subtitle1" gutterBottom></Typography>
+        <Typography variant="subtitle1" gutterBottom />
         AngularJS / ExtJS / PHP / JS / Ansible / XML / CSS / Jira / YAML / Laravel / Laminas( Zend ) / SVN / Ant /
         Jenkins / MongoDB / MYSQL
-        <Typography variant="subtitle1" gutterBottom></Typography>
+        <Typography variant="subtitle1" gutterBottom />
         <Typography variant="body1" paragraph>
           Developed a range of financial widgets by utilizing AngularJS directives, which were integrated into the
           Scivantage Widget Library and deployed across numerous client platforms. Co-designed and managed Production
@@ -90,6 +90,6 @@ const Profile = () => {
       </Paper>
     </Container>
   );
-};
+}
 
 export default Profile;

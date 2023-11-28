@@ -1,6 +1,7 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import data from '../data/questionsData.js';
+import data from '../data/questionsData';
 
 function SingleQuestion({ title, info }) {
   const [showInfo, setShowInfo] = useState(false);
@@ -9,7 +10,7 @@ function SingleQuestion({ title, info }) {
     <article className="question">
       <header>
         <h5>{title}</h5>
-        <button className="btn" onClick={() => setShowInfo(!showInfo)}>
+        <button type="button" className="btn" onClick={() => setShowInfo(!showInfo)}>
           {showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}
         </button>
       </header>
@@ -28,7 +29,7 @@ function QuestionsApp() {
         <h4>questions and answers about login</h4>
         <section className="info">
           {questions.map((question) => {
-            return <SingleQuestion key={question.id} {...question}></SingleQuestion>;
+            return <SingleQuestion key={question.id} {...question} />;
           })}
         </section>
       </div>

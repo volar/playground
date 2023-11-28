@@ -10,7 +10,7 @@ import SimpleTodo from '../examples/SimpleTodo';
 import ToursApp from '../examples/ToursApp';
 import QuestionsApp from '../examples/Questions';
 
-const Home = () => {
+function Home() {
   return (
     <Container>
       <Navigation />
@@ -49,6 +49,6 @@ const Home = () => {
       <Footer />
     </Container>
   );
-};
+}
 
 export default Home;

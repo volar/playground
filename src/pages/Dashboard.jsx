@@ -32,7 +32,7 @@ function Dashboard() {
 
   const handleOrderClick = () => {
     // Add your order logic here using the selectedItem data
-    alert(`Order placed for ${selectedItem.title}`);
+    alert(`Order placed for ${selectedItem.title}`); // eslint-disable-line no-alert
     setOpenDrawer(false); // Close the drawer after placing the order
   };
 

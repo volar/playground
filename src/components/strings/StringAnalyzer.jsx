@@ -5,7 +5,7 @@ function StringAnalyzer() {
   const [inputString, setInputString] = useState('');
   const [analysisResult, setAnalysisResult] = useState('');
 
-  //single for loop to check for consecutive characters
+  // single for loop to check for consecutive characters
   const analyzeStringForConsecutiveChars = () => {
     // check for the input of the string
     if (!inputString) {
@@ -21,17 +21,18 @@ function StringAnalyzer() {
     let currentCount = 1;
 
     // go over the string and count the characters that are the same
-    for (let i = 1; i < inputString.length; i++) {
+    for (let i = 1; i < inputString.length; i + 1) {
       // check if char is the same
       if (inputString[i] === currentChar) {
-        //add to the current count when we match
-        currentCount++;
+        // add to the current count when we match
+        currentCount += 1;
       } else {
-        //move on on the string characters
+        // move on to the next string character
         currentChar = inputString[i];
         currentCount = 1;
       }
 
+      // let's check for the maxCount
       // lets check for the maxCount
       if (currentCount > maxCount) {
         maxChar = currentChar;
@@ -40,9 +41,6 @@ function StringAnalyzer() {
     }
 
     // return the max of the characters and the characters
-    console.log('input string', inputString);
-    console.log('maxChar in the string', maxChar);
-    console.log('maxCount', maxCount);
     setAnalysisResult({ char: maxChar, count: maxCount });
     return { char: maxChar, count: maxCount };
   };

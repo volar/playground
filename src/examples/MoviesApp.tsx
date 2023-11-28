@@ -1,7 +1,7 @@
+import React, { useState } from 'react';
 import { movies, MovieType } from './movies';
-import { useState } from 'react';
 
-const Movie = ({ title, year }: MovieType) => {
+function Movie({ title, year }: MovieType) {
   const [hidden, setHidden] = useState<boolean>(true);
   return (
     <article>
@@ -10,13 +10,15 @@ const Movie = ({ title, year }: MovieType) => {
         <span className={`${hidden ? 'blurred' : 'visible'}`}>{year}</span>
       </p>
       <footer>
-        <button onClick={() => setHidden(!hidden)}>Toggle</button>
+        <button type="button" onClick={() => setHidden(!hidden)}>
+          Toggle
+        </button>
       </footer>
     </article>
   );
-};
+}
 
-const MoviesApp = () => {
+function MoviesApp() {
   return (
     <main>
       {movies.map((m) => (
@@ -24,6 +26,6 @@ const MoviesApp = () => {
       ))}
     </main>
   );
-};
+}
 
 export default MoviesApp;

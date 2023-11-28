@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { users as sampleUsers } from './sample';
 
 const axios = require('axios');
@@ -6,9 +7,8 @@ function authenticate(email, password) {
   const account = sampleUsers.find((a) => a.email === email);
   if (account && account.password === password) {
     return account;
-  } else {
-    return undefined;
   }
+  return undefined;
 }
 
 // The object returned from this function will be displayed in
@@ -17,7 +17,7 @@ function authenticate(email, password) {
 async function login(email, password) {
   const account = authenticate(email, password);
   const apiUrl = 'https://hackcheck.woventeams.com/api/v4/breachedaccount/';
-  let breaches = [];
+  const breaches = [];
 
   if (account) {
     try {
@@ -59,15 +59,13 @@ async function login(email, password) {
           breachedAccounts: breaches,
         },
       };
-    } else {
-      return { success: true };
     }
-  } else {
-    return {
-      success: false,
-      message: 'The username or password you entered is invalid.',
-    };
+    return { success: true };
   }
+  return {
+    success: false,
+    message: 'The username or password you entered is invalid.',
+  };
 }
 
 export default login;

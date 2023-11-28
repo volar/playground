@@ -8,7 +8,6 @@ import RecipesList from './pages/RecipesList';
 import ScientistList from './pages/ScientistList';
 import Examples from './pages/Examples';
 import StringTools from './pages/StringTools';
-import ExchangeApp from './pages/ExchangeApp';
 import Profile from './pages/Profile';
 import Todo from './pages/Todo';
 import NpiApiSearch from './pages/NpiApiSearch';
@@ -26,7 +25,6 @@ function App() {
         <Route path="scientist-list" element={<ScientistList />} />
         <Route path="examples" element={<Examples />} />
         <Route path="consecutive-char" element={<StringTools />} />
-        <Route path="exchange" element={<ExchangeApp />} />
         <Route path="todo" element={<Todo />} />
         <Route path="npi-api-search" element={<NpiApiSearch />} />
       </Routes>

@@ -10,7 +10,7 @@ const useRandomUsers = () => {
       try {
         const response = await fetch('https://randomuser.me/api/?results=20');
         const data = await response.json();
-        //data dog log the results for the following call
+        // data dog log the results for the following call
         setUsers(data.results);
         setLoading(false);
       } catch (error) {

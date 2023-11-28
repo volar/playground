@@ -7,14 +7,14 @@ function StringChecker() {
   const [subString, setSubString] = useState('');
   const [stringResult, setStringResult] = useState(true);
 
-  //single for loop to check for consecutive characters
+  // single for loop to check for consecutive characters
   const analyzeString = () => {
     // check for the input of the string
     if (!inputString || !subString) {
       return setStringResult(false);
     }
 
-    //count all the characters in the string
+    // count all the characters in the string
     const charCount = new Map();
 
     for (const char of inputString) {

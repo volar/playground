@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
+import PropTypes from 'prop-types';
+
 const url = 'https://course-api.com/react-tours-project';
 
-const Loading = () => {
+function Loading() {
   return (
     <div className="loading">
       <h1>loading...</h1>
     </div>
   );
-};
+}
 
-const Tour = ({ id, image, info, name, price, removeTour }) => {
+function Tour({ id, image, info, name, price, removeTour }) {
   const [readMore, setReadMore] = useState(false);
   return (
     <article className="single-tour">
@@ -30,22 +32,27 @@ const Tour = ({ id, image, info, name, price, removeTour }) => {
       </footer>
     </article>
   );
-};
+}
 
-const Tours = ({ tours, removeTour }) => {
+function Tours({ tours, removeTour }) {
   return (
     <section>
       <div className="title">
         <h2>our tours</h2>
-        <div className="underline"></div>
+        <div className="underline" />
       </div>
       <div>
-        {tours.map((tour) => {
-          return <Tour key={tour.id} {...tour} removeTour={removeTour} />;
-        })}
+        {tours.map((tour) => (
+          <Tour key={tour.id} {...tour} removeTour={removeTour} />
+        ))}
       </div>
     </section>
   );
+}
+
+Tours.propTypes = {
+  tours: PropTypes.array.isRequired,
+  removeTour: PropTypes.func.isRequired,
 };
 
 export default function ToursApp() {
@@ -87,9 +94,7 @@ export default function ToursApp() {
       <main>
         <div className="title">
           <h2>no tours left</h2>
-          <button className="btn" onClick={() => fetchTours()}>
-            refresh
-          </button>
+          <button onClick={refresh}>Refresh</button>
         </div>
       </main>
     );

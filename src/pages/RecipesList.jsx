@@ -1,4 +1,5 @@
-import { recipes } from '../data/recipesData.js';
+/* eslint-disable */
+import { recipes } from '../data/recipesData';
 
 function Recipe({ id, name, ingredients }) {
   return (
@@ -30,12 +31,12 @@ const poem = {
 };
 
 function Poem() {
-  let output = [];
+  const output = [];
 
   // Fill the output array
   poem.lines.forEach((line, i) => {
-    output.push(<hr key={i + '-separator'} />);
-    output.push(<p key={i + '-text'}>{line}</p>);
+    output.push(<hr key={`${i}-separator`} />);
+    output.push(<p key={`${i}-text`}>{line}</p>);
   });
   // Remove the first <hr />
   output.shift();

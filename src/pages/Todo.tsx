@@ -78,7 +78,7 @@ function Todo() {
     <Container>
       <Navigation />
       <Typography sx={{ mt: '20px' }} variant="h4" gutterBottom>
-        Todo's App
+        Todos App
       </Typography>
       <Paper elevation={3} sx={{ margin: '16px', padding: '16px' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>

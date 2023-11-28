@@ -13,9 +13,5 @@ function useTime() {
 
 export default function Time() {
   const time = useTime();
-  return (
-    <>
-      <span>{time.toLocaleTimeString()}</span>
-    </>
-  );
+  return <span>{time.toLocaleTimeString()}</span>;
 }

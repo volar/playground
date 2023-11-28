@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import persons from '../data/birthdaysData';
 
-const List = ({ people }) => {
+interface Person {
+  id: number;
+  name: string;
+  age: number;
+  image: string;
+}
+
+function List({ people }: { people: Person[] }) {
   return (
     <>
       {people.map((person) => {
@@ -18,7 +25,7 @@ const List = ({ people }) => {
       })}
     </>
   );
-};
+}
 
 export default function Birthdays() {
   const [people, setPeople] = useState(persons);
@@ -27,7 +34,9 @@ export default function Birthdays() {
       <section className="container">
         <h3>{people.length} birthdays today</h3>
         <List people={people} />
-        <button onClick={() => setPeople([])}>clear all</button>
+        <button type="button" onClick={() => setPeople([])}>
+          clear all
+        </button>
       </section>
     </main>
   );

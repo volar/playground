@@ -1,8 +1,8 @@
 import React from 'react';
-import Navigation from '../components/Navigation';
+import Navigation from './Navigation';
 
-const Header = () => {
+function Header() {
   return <Navigation />;
-};
+}
 
 export default Header;

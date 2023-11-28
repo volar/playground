@@ -1,4 +1,5 @@
-export const Task = () => {
+/* eslint-disable */
+export function Task() {
   return (
     <section>
       <h2>React Exercise:</h2>
@@ -39,4 +40,4 @@ export const Task = () => {
       </ul>
     </section>
   );
-};
+}

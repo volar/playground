@@ -3,7 +3,11 @@ import React from 'react';
 import { AppBar, Container, CssBaseline, Toolbar, Typography } from '@mui/material';
 import Footer from './Footer';
 
-const Layout = ({ children, history }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+function Layout({ children }: LayoutProps) {
   return (
     <div>
       <CssBaseline />
@@ -18,6 +22,6 @@ const Layout = ({ children, history }) => {
       <Footer />
     </div>
   );
-};
+}
 
 export default Layout;

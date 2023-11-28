@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function TrafficLight() {
   const [walk, setWalk] = useState(false);
@@ -15,8 +15,10 @@ export default function TrafficLight() {
   return (
     <>
       <h3>Traffic Light</h3>
-      <button onClick={handleClick}>Change to {walk ? 'Stop' : 'Walk'}</button>
-      <h4 style={{ color: color }}>{walk ? 'Walk' : "Don't walk"}</h4>
+      <button type="button" onClick={handleClick}>
+        Change to {walk ? 'Stop' : 'Walk'}
+      </button>
+      <h4 style={{ color }}>{walk ? 'Walk' : "Don't walk"}</h4>
     </>
   );
 }

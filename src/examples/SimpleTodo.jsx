@@ -21,7 +21,7 @@ export default function SimpleTodo() {
   const handleAddTodo = () => {
     const id = Date.now();
     const newTodo = {
-      id: id,
+      id,
       task: newTask,
       completed: false,
     };

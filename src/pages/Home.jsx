@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography, Button, Grid } from '@mui/material';
 import Navigation from '../components/Navigation';
 
-const Home = () => {
+function Home() {
   return (
     <Container>
       <Navigation />
@@ -67,6 +67,6 @@ const Home = () => {
       </Grid>
     </Container>
   );
-};
+}
 
 export default Home;

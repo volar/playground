@@ -2,9 +2,8 @@ import React from 'react';
 import { AppBar, Typography, Toolbar, Container, Button, useMediaQuery } from '@mui/material';
 import Clock from './Clock';
 
-const Navigation: React.FC = () => {
+function Navigation() {
   const isMobile = useMediaQuery('(max-width:800px)');
-
   return (
     <AppBar position="static">
       <Container>
@@ -55,6 +54,6 @@ const Navigation: React.FC = () => {
       </Container>
     </AppBar>
   );
-};
+}
 
 export default Navigation;

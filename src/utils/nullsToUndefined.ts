@@ -1,3 +1,4 @@
+/* eslint-disable */
 type RecursivelyReplaceNullWithUndefined<T> = T extends null
   ? undefined
   : T extends (infer U)[]

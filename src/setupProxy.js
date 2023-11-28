@@ -1,6 +1,6 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-module.exports = function (app) {
+module.exports = function SetupProxy(app) {
   app.use(
     '/api',
     createProxyMiddleware({
@@ -9,7 +9,7 @@ module.exports = function (app) {
       pathRewrite: {
         '^/api': '/api',
       },
-      onProxyReq: (proxyReq, req) => {
+      onProxyReq: (proxyReq) => {
         // Forward all request parameters to the target server
         // const queryString = Object.keys(req.query)
         //   .map((key) => `${key}=${encodeURIComponent(req.query[key])}`)
@@ -19,7 +19,7 @@ module.exports = function (app) {
 
         // Construct the full URL with protocol and domain
         const fullUrl = `${proxyReq.protocol}://${proxyReq.host}${proxyReq.path}`;
-        console.log('Proxying to:', fullUrl);
+        console.log('Proxying to:', fullUrl); // eslint-disable-line no-console
       },
     })
   );
