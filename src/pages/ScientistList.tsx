@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import getImageUrl from '../utils/getImageUrl';
-import { people } from '../data/scientistData';
+import people from '../data/scientistData';
 
 export default function ScientistList() {
   const [filter, setFilter] = useState<string>('all'); // Initial filter state

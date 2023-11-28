@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { recipes } from '../data/recipesData';
+import recipes from '../data/recipesData';
 
 function Recipe({ id, name, ingredients }) {
   return (
