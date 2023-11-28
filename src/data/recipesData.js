@@ -1,4 +1,4 @@
-export const recipes = [
+const recipes = [
   {
     id: 'greek-salad',
     name: 'Greek Salad',
@@ -15,3 +15,5 @@ export const recipes = [
     ingredients: ['chickpeas', 'olive oil', 'garlic cloves', 'lemon', 'tahini'],
   },
 ];
+
+export default recipes;
