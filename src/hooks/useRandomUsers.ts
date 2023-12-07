@@ -15,7 +15,7 @@ const useRandomUsers = () => {
         setLoading(false);
       } catch (error) {
         // log the error for the call made
-        console.log('Error fetching data', error);
+        console.log('Error fetching data', error); // eslint-disable-line no-console
       }
     };
 

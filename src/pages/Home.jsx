@@ -25,13 +25,18 @@ function Home() {
           </Button>
         </Grid>
         <Grid item xs={6} sm={3}>
-          <Button color="primary" variant="contained" fullWidth href="/cards">
-            Cards
+          <Button color="primary" variant="contained" fullWidth href="/consecutive-char">
+            String Analyzer
           </Button>
         </Grid>
         <Grid item xs={6} sm={3}>
-          <Button color="primary" variant="contained" fullWidth href="/redux-example">
-            Redux Example
+          <Button color="primary" variant="contained" fullWidth href="/todo">
+            Todo
+          </Button>
+        </Grid>
+        <Grid item xs={6} sm={3}>
+          <Button color="primary" variant="contained" fullWidth href="/cards">
+            Cards
           </Button>
         </Grid>
         <Grid item xs={6} sm={3}>
@@ -47,21 +52,6 @@ function Home() {
         <Grid item xs={6} sm={3}>
           <Button color="primary" variant="contained" fullWidth href="/product-table">
             Product Table
-          </Button>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Button color="primary" variant="contained" fullWidth href="/consecutive-char">
-            Consecutive Char
-          </Button>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Button color="primary" variant="contained" fullWidth href="/exchange">
-            Exchange App
-          </Button>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Button color="primary" variant="contained" fullWidth href="/todo">
-            Todo
           </Button>
         </Grid>
       </Grid>

@@ -21,18 +21,18 @@ function StringAnalyzer() {
     let currentCount = 1;
 
     // go over the string and count the characters that are the same
-    for (let i = 1; i < inputString.length; i + 1) {
+    /* eslint-disable-next-line */
+    for (let i = 1; i < inputString.length; i++) {
       // check if char is the same
       if (inputString[i] === currentChar) {
         // add to the current count when we match
-        currentCount += 1;
+        currentCount++; /* eslint-disable-line */
       } else {
-        // move on to the next string character
+        // move on on the string characters
         currentChar = inputString[i];
         currentCount = 1;
       }
 
-      // let's check for the maxCount
       // lets check for the maxCount
       if (currentCount > maxCount) {
         maxChar = currentChar;
